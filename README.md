@@ -24,6 +24,7 @@ Commercial Tools
 *	Sublime Text
 *	PHPstorm
 * Sequel Pro (MariaDB/MySQL management tool)
+* Codebug - didn't install (http://www.codebugapp.com) but it might be interesting to check out.
 
 Homebrew
 --------
@@ -32,8 +33,9 @@ edconf
 
 PHP
 ---
-* Use stock version
+* Use stock version, may need to recompile if you want to use PostgreSQL
 *	Copy sample config file /etc/php.ini.default to /etc/php.ini
+* Xdebug configuration is below
 
 Apache
 ------
@@ -45,15 +47,23 @@ Apache
 
 MariaDB
 -------
+* The distributed PHP is built with MariaDB/MySQL support.
+
+```
 brew install mariadb
+```
 
 PostgreSQL
 ----------
-brew install postgresql
+* The distributed PHP doesn't appear to support PostgreSQL.
 
-Xdebug
+```
+brew install postgresql
+```
+
+Xdebug (http://xdebug.org)
 ------
-* Use distributed version.
+* Use distributed version. Mavericks ships with the 2.2.3.
 * Base setup on: http://www.fieg.nl/installing-xdebug-on-mac-osx, http://www.lullabot.com/blog/article/configuring-xdebug-osx-mountain-lion,  and http://stackoverflow.com/questions/17215729/xdebug-install-php-ini-os-x-10-8-mountain-lion
 
 ```
@@ -87,8 +97,10 @@ Drush (https://github.com/drush-ops/drush)
 -----
 * Use latest for D8 support.
 
+```
 git clone --branch master https://github.com/drush-ops/drush.git
 ln -s $(pwd)/drush/drush /usr/local/bin/ # Or ~/bin/drush
+```
 
 Dreditor (http://dreditor.org)
 --------
