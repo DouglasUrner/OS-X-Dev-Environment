@@ -12,7 +12,7 @@ out. I was hoping for something with less of an initial learning
 curve.
 
 Drupal Dev Environment Setup Notes
-==================================
+----------------------------------
 
 Based on: http://www.lullabot.com/blog/article/setting-my-mac-without-mamp
 
@@ -52,9 +52,12 @@ brew install postgresql
 Xdebug
 ------
 
-Drush
+Drush (https://github.com/drush-ops/drush)
 -----
+* Use latest for D8 support.
 
-Dreditor
+git clone --branch master https://github.com/drush-ops/drush.git
+
+Dreditor (http://dreditor.org)
 --------
-
+* Download from project page.
