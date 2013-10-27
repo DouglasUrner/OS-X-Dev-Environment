@@ -56,6 +56,7 @@ Xdebug
 * Use distributed version.
 * Base setup on: http://www.fieg.nl/installing-xdebug-on-mac-osx, http://www.lullabot.com/blog/article/configuring-xdebug-osx-mountain-lion,  and http://stackoverflow.com/questions/17215729/xdebug-install-php-ini-os-x-10-8-mountain-lion
 
+```
 diff --git i/etc/php.ini w/etc/php.ini
 index 814455b..7068313 100644
 --- i/etc/php.ini
@@ -67,6 +68,8 @@ index 814455b..7068313 100644
 +; Start off using the distributed version of Xdebug.
 +zend_extension=/usr/lib/php/extensions/no-debug-non-zts-20100525/xdebug.so
 +
+```
+
  ;;;;;;;;;;;;;;;;;;;
  ; Module Settings ;
  ;;;;;;;;;;;;;;;;;;;
