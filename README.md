@@ -68,8 +68,6 @@ index 814455b..7068313 100644
 +; Start off using the distributed version of Xdebug.
 +zend_extension=/usr/lib/php/extensions/no-debug-non-zts-20100525/xdebug.so
 +
-```
-
  ;;;;;;;;;;;;;;;;;;;
  ; Module Settings ;
  ;;;;;;;;;;;;;;;;;;;
@@ -83,6 +81,7 @@ index 814455b..7068313 100644
  [CLI Server]
  ; Whether the CLI web server uses ANSI color coding in its terminal output.
  cli_server.color = On
+```
 
 Drush (https://github.com/drush-ops/drush)
 -----
