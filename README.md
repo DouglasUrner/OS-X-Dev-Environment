@@ -29,6 +29,10 @@ Commercial Tools
 Homebrew
 --------
 
+```
+ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+```
+
 edconf
 
 PHP
