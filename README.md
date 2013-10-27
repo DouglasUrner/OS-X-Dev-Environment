@@ -51,6 +51,13 @@ MariaDB
 
 ```
 brew install mariadb
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist
+```
+
+Test the database connection with Sequel Pro or
+
+```
+mysql -uroot
 ```
 
 PostgreSQL
