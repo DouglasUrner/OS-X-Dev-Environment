@@ -23,6 +23,7 @@ Commercial Tools
 * Xcode command line tools (or full Xcode)
 *	Sublime Text
 *	PHPstorm
+* Sequel Pro (MariaDB/MySQL management tool)
 
 Homebrew
 --------
@@ -40,6 +41,7 @@ Apache
 *	Enable PHP module
 *	Enable clean URLs
 *	Enable virtual hosts
+* Create working virtual host entries (DocumentRoot is wrong in examples).
 
 MariaDB
 -------
@@ -51,12 +53,40 @@ brew install postgresql
 
 Xdebug
 ------
+* Use distributed version.
+* Base setup on: http://www.fieg.nl/installing-xdebug-on-mac-osx, http://www.lullabot.com/blog/article/configuring-xdebug-osx-mountain-lion,  and http://stackoverflow.com/questions/17215729/xdebug-install-php-ini-os-x-10-8-mountain-lion
+
+diff --git i/etc/php.ini w/etc/php.ini
+index 814455b..7068313 100644
+--- i/etc/php.ini
++++ w/etc/php.ini
+@@ -905,10 +905,19 @@ default_socket_timeout = 60
+ ;extension=php_xsl.dll
+ ;extension=php_zip.dll
+ 
++; Start off using the distributed version of Xdebug.
++zend_extension=/usr/lib/php/extensions/no-debug-non-zts-20100525/xdebug.so
++
+ ;;;;;;;;;;;;;;;;;;;
+ ; Module Settings ;
+ ;;;;;;;;;;;;;;;;;;;
+ 
++[xdebug]
++xdebug.remote_enable=1
++xdebug.remote_host=localhost
++xdebug.remote_port=9000
++xdebug.remote_handler="dbgp"
++
+ [CLI Server]
+ ; Whether the CLI web server uses ANSI color coding in its terminal output.
+ cli_server.color = On
 
 Drush (https://github.com/drush-ops/drush)
 -----
 * Use latest for D8 support.
 
 git clone --branch master https://github.com/drush-ops/drush.git
+ln -s $(pwd)/drush/drush /usr/local/bin/ # Or ~/bin/drush
 
 Dreditor (http://dreditor.org)
 --------
