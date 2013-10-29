@@ -107,6 +107,8 @@ index 814455b..7068313 100644
 Drush (https://github.com/drush-ops/drush)
 -----
 * Use latest for D8 support.
+* Useful stuff on Mark Sonnabaum's GitHub page: https://github.com/msonnabaum/drush. Good configuration and troubleshooting tips there.
+* Add drush completion to your shell.
 
 ```
 git clone --branch master https://github.com/drush-ops/drush.git
