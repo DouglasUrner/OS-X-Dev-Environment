@@ -16,9 +16,9 @@ Drupal Dev Environment Setup Notes
 
 Useful advice/notes from:
 
-Karen Stevenson: http://www.lullabot.com/blog/article/setting-my-mac-without-mamp
-Niepi's (aka Thomas Niepraschk): https://gist.github.com/niepi/1932534
-Angus Mak: http://www.lullabot.com/blog/article/configuring-xdebug-osx-mountain-lion
+* Karen Stevenson: http://www.lullabot.com/blog/article/setting-my-mac-without-mamp
+* Niepi's (aka Thomas Niepraschk): https://gist.github.com/niepi/1932534
+* Angus Mak: http://www.lullabot.com/blog/article/configuring-xdebug-osx-mountain-lion
 
 Stock Mavericks, plus:
 
