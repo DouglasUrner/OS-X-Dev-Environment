@@ -14,15 +14,19 @@ curve.
 Drupal Dev Environment Setup Notes
 ----------------------------------
 
-Based on: http://www.lullabot.com/blog/article/setting-my-mac-without-mamp
+Useful advice/notes from:
+
+* Karen Stevenson: http://www.lullabot.com/blog/article/setting-my-mac-without-mamp
+* Niepi's (aka Thomas Niepraschk): https://gist.github.com/niepi/1932534
+* Angus Mak: http://www.lullabot.com/blog/article/configuring-xdebug-osx-mountain-lion
 
 Stock Mavericks, plus:
 
 Commercial Tools
 ----------------
 * Xcode command line tools (or full Xcode)
-*	Sublime Text
-*	PHPstorm
+* Sublime Text
+* PHPstorm
 * Sequel Pro (MariaDB/MySQL management tool)
 * Codebug - didn't install (http://www.codebugapp.com) but it might be interesting to check out.
 
@@ -35,23 +39,55 @@ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 
 edconf
 
+Git
+---
+Installing Xcode gets you git. For later versions of git install from Homebrew
+
+```
+brew install git
+```
+
+Nice additions to git:
+* Command & branch autocompletion: https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
+
+Once you've got Homebrew installed:
+
+```
+brew install bash-completion
+```
+
 PHP
 ---
-* Use stock version, may need to recompile if you want to use PostgreSQL
-*	Copy sample config file /etc/php.ini.default to /etc/php.ini
+* Use stock version, you will need to recompile if you want to use PostgreSQL,
+Homebrew will make this easy.
+* Copy sample config file /etc/php.ini.default to /etc/php.ini
 * Xdebug configuration is below
+
+Installing a newer version of PHP requires setting up a "tap" in Homebrew.
+Homebrew, by default, doesn't support packages that are distributed with
+Mac OS X. Many online notes assume that this is already done and you'll find
+that Homebrew doesn't work on things that other people clearly think will
+work. So do this first (if you have't already):
+
+```
+brew tap homebrew/dupes
+brew tap josegonzalez/php
+```
+
+Now the PHP formulae will work.
 
 Apache
 ------
 * Use stock version
-*	Enable PHP module
-*	Enable clean URLs
-*	Enable virtual hosts
+* Enable PHP module
+* Enable clean URLs
+* Enable virtual hosts
 * Create working virtual host entries (DocumentRoot is wrong in examples).
 
 MariaDB
 -------
 * The distributed PHP is built with MariaDB/MySQL support.
+* To compile, the gcc-42 package is needed, if necessary it can be installed from Homebrew.
 
 ```
 brew install mariadb
@@ -66,7 +102,10 @@ mysql -uroot
 
 PostgreSQL
 ----------
-* The distributed PHP doesn't appear to support PostgreSQL.
+* If Server.app is installed there is a native instance of PostgreSQL. If it is not, the PostgreSQL can be installed with Homebrew.
+* These instructions (untested) seems promising: https://gist.github.com/lxneng/741932
+* The distributed PHP doesn't appear to support PostgreSQL. So PHP will need to be rebuilt. Homebrew has the necessary formulae (once the PHP tap is added – see above).
+* Other options for installing PostgreSQL can be found here: http://www.postgresql.org/download/macosx
 
 ```
 brew install postgresql
