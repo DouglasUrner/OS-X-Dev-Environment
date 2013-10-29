@@ -147,6 +147,7 @@ Drush (https://github.com/drush-ops/drush)
 -----
 * Use latest for D8 support.
 * Useful stuff on Mark Sonnabaum's GitHub page: https://github.com/msonnabaum/drush. Good configuration and troubleshooting tips there.
+* And here: http://nuvole.org/blog/2010/nov/09/typing-less-drush-aliases-and-autocompletion.
 * Add drush completion to your shell.
 
 ```
