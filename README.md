@@ -21,8 +21,8 @@ Stock Mavericks, plus:
 Commercial Tools
 ----------------
 * Xcode command line tools (or full Xcode)
-*	Sublime Text
-*	PHPstorm
+* Sublime Text
+* PHPstorm
 * Sequel Pro (MariaDB/MySQL management tool)
 * Codebug - didn't install (http://www.codebugapp.com) but it might be interesting to check out.
 
@@ -38,15 +38,28 @@ edconf
 PHP
 ---
 * Use stock version, may need to recompile if you want to use PostgreSQL
-*	Copy sample config file /etc/php.ini.default to /etc/php.ini
+* Copy sample config file /etc/php.ini.default to /etc/php.ini
 * Xdebug configuration is below
+
+Installing a newer version of PHP requires setting up a "tap" in Homebrew.
+Homebrew, by default, doesn't support packages that are distributed with
+Mac OS X. Many online notes assume that this is already done and you'll find
+that Homebrew doesn't work on things that other people clearly think will
+work. So do this first (if you have't already):
+
+```
+brew tap homebrew/dupes
+brew tap josegonzalez/php
+```
+
+Now the PHP formulae will work.
 
 Apache
 ------
 * Use stock version
-*	Enable PHP module
-*	Enable clean URLs
-*	Enable virtual hosts
+* Enable PHP module
+* Enable clean URLs
+* Enable virtual hosts
 * Create working virtual host entries (DocumentRoot is wrong in examples).
 
 MariaDB
