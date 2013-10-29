@@ -14,7 +14,11 @@ curve.
 Drupal Dev Environment Setup Notes
 ----------------------------------
 
-Based on: http://www.lullabot.com/blog/article/setting-my-mac-without-mamp
+Useful advice/notes from:
+
+Karen Stevenson: http://www.lullabot.com/blog/article/setting-my-mac-without-mamp
+Niepi's (aka Thomas Niepraschk): https://gist.github.com/niepi/1932534
+Angus Mak: http://www.lullabot.com/blog/article/configuring-xdebug-osx-mountain-lion
 
 Stock Mavericks, plus:
 
@@ -37,7 +41,8 @@ edconf
 
 PHP
 ---
-* Use stock version, may need to recompile if you want to use PostgreSQL
+* Use stock version, you will need to recompile if you want to use PostgreSQL,
+Homebrew will make this easy.
 * Copy sample config file /etc/php.ini.default to /etc/php.ini
 * Xdebug configuration is below
 
