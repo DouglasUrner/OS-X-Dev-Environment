@@ -39,6 +39,23 @@ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 
 edconf
 
+Git
+---
+Installing Xcode gets you git. For later versions of git install from Homebrew
+
+```
+brew install git
+```
+
+Nice additions to git:
+* Command & branch autocompletion: https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
+
+Once you've got Homebrew installed:
+
+```
+brew install bash-completion
+```
+
 PHP
 ---
 * Use stock version, you will need to recompile if you want to use PostgreSQL,
@@ -70,6 +87,7 @@ Apache
 MariaDB
 -------
 * The distributed PHP is built with MariaDB/MySQL support.
+* To compile, the gcc-42 package is needed, if necessary it can be installed from Homebrew.
 
 ```
 brew install mariadb
@@ -84,7 +102,10 @@ mysql -uroot
 
 PostgreSQL
 ----------
-* The distributed PHP doesn't appear to support PostgreSQL.
+* If Server.app is installed there is a native instance of PostgreSQL. If it is not, the PostgreSQL can be installed with Homebrew.
+* These instructions (untested) seems promising: https://gist.github.com/lxneng/741932
+* The distributed PHP doesn't appear to support PostgreSQL. So PHP will need to be rebuilt. Homebrew has the necessary formulae (once the PHP tap is added – see above).
+* Other options for installing PostgreSQL can be found here: http://www.postgresql.org/download/macosx
 
 ```
 brew install postgresql
