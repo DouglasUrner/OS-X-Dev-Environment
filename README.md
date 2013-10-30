@@ -27,6 +27,7 @@ Commercial Tools
 * Xcode command line tools (or full Xcode)
 * Sublime Text
 * PHPstorm
+** Templates for Drupal: https://drupal.org/project/phpstorm-templates
 * Sequel Pro (MariaDB/MySQL management tool)
 * Codebug - didn't install (http://www.codebugapp.com) but it might be interesting to check out.
 
