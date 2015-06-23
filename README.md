@@ -1,35 +1,43 @@
 OS-X-Dev-Environment
 ====================
 
-Notes on creating an OS X native development environment. My primary
-goals were to be able to do Drupal 8 development with Xdebug support,
-which meant that MAMP wasn't a viable option. I also wanted to do
-work in Ruby and make another shot at getting an Xcode environment
-for Arudino development going. A secondary goal was to have something
-easier to understand than Mark Sonnabaum's Megalodon. Megalodon is
-where I'd like to end up, but when it breaks there is a lot to sort
-out. I was hoping for something with less of an initial learning
-curve.
+Notes on creating an OS X native development environment. My primary goals are to be able to do Drupal 8 development with Xdebug support, which meant that MAMP wasn't a viable option. I also wanted to do Meteor development (both in native JavaScript and using TypeScript), work in Ruby, and make another shot at getting an Xcode environment for Arudino development going.
+
+A secondary goal was to have something easier to understand than Mark Sonnabaum's [Megalodon](https://github.com/msonnabaum/megalodon). Megalodon, or something like it, is where I'd like to end up, but when it breaks there is a lot to sort out. I was hoping for something with less of an initial learning curve.
+
+Since I'm now teaching computer science (ECS and IB Computer Science) I want to keep the development tools fairly close to the stock OS X tools (just for the ease of lab managment and the buy in of the district computer support folks).
 
 Drupal Dev Environment Setup Notes
 ----------------------------------
 
 Useful advice/notes from:
 
+* Alan Ivey: [OS X 10.10 Yosemite Local Development Environment: Apache, PHP, and MySQL with Homebrew](https://echo.co/blog/os-x-1010-yosemite-local-development-environment-apache-php-and-mysql-homebrew)
+
+Previous versions also learned from:
+
 * Karen Stevenson: http://www.lullabot.com/blog/article/setting-my-mac-without-mamp
 * Niepi's (aka Thomas Niepraschk): https://gist.github.com/niepi/1932534
 * Angus Mak: http://www.lullabot.com/blog/article/configuring-xdebug-osx-mountain-lion
 
-Stock Mavericks, plus:
+My starting point was the latest Yosemite public beta (10.10.4 as I write this) plus:
 
 Commercial Tools
 ----------------
-* Xcode command line tools (or full Xcode)
-* Sublime Text
-* PHPstorm
-  * Templates for Drupal: https://drupal.org/project/phpstorm-templates
-* Sequel Pro (MariaDB/MySQL management tool)
-* Codebug - didn't install (http://www.codebugapp.com) but it might be interesting to check out.
+* Xcode (if you don't need the Xcode IDE you could also just install the command line tools), I used the stock version from the App Store – the beta of Xcode 7 was out, but I decided not to live on the bleeding edge…
+
+  To use Xcode, and the command line tools which Homebrew depends on, you have to agree to the license. You can either launch Xcode or run this command:
+
+  ```
+  sudo xcodebuild -license
+  ```
+
+* [Atom](https://atom.io)
+  * TypeScript
+* [PHPstorm](https://www.jetbrains.com/phpstorm)
+  * [Templates for Drupal](https://drupal.org/project/phpstorm-templates)
+* [Sequel Pro](http://www.sequelpro.com) (MariaDB/MySQL management tool)
+* [Codebug](http://www.codebugapp.com) - haven't used it, but it looks like it might be interesting.
 
 Homebrew
 --------
@@ -38,11 +46,16 @@ Homebrew
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 ```
 
-edconf
+Editor Config
+-------------
+
+Provides an easy way to maintain common coding standards across multiple editors (Atom, Emacs, PHPStorm, vi, Xcode, etc.).
+
+http://editorconfig.org
 
 Git
 ---
-Installing Xcode gets you git. For later versions of git install from Homebrew
+Installing Xcode gets you git. Yosemite comes with 2.4.4 as of 10.10.4. For later versions of git install from Homebrew:
 
 ```
 brew install git
@@ -56,6 +69,16 @@ Once you've got Homebrew installed:
 ```
 brew install bash-completion
 ```
+
+Then add the following lines to your .bash_profile
+
+```
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+   . $(brew --prefix)/etc/bash_completion
+fi
+```
+
+The Homebrew formula also reminds you to do this.
 
 PHP
 ---
@@ -125,14 +148,14 @@ index 814455b..7068313 100644
 @@ -905,10 +905,19 @@ default_socket_timeout = 60
  ;extension=php_xsl.dll
  ;extension=php_zip.dll
- 
+
 +; Start off using the distributed version of Xdebug.
 +zend_extension=/usr/lib/php/extensions/no-debug-non-zts-20100525/xdebug.so
 +
  ;;;;;;;;;;;;;;;;;;;
  ; Module Settings ;
  ;;;;;;;;;;;;;;;;;;;
- 
+
 +[xdebug]
 +xdebug.remote_enable=1
 +xdebug.remote_host=localhost
