@@ -182,3 +182,12 @@ ln -s $(pwd)/drush/drush /usr/local/bin/ # Or ~/bin/drush
 Dreditor (http://dreditor.org)
 --------
 * Download from project page.
+
+Ruby/Volt
+---------
+
+```shell
+brew install ruby # OSX ships with a version, but it is a but old.
+gem install volt
+volt new PROJECTNAME
+```
