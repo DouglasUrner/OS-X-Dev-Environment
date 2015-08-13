@@ -20,7 +20,7 @@ Previous versions also learned from:
 * Niepi's (aka Thomas Niepraschk): https://gist.github.com/niepi/1932534
 * Angus Mak: http://www.lullabot.com/blog/article/configuring-xdebug-osx-mountain-lion
 
-My starting point was the latest Yosemite public beta (10.10.4 as I write this) plus:
+My starting point was the latest El Capitan public beta (10.11.4 as I write this) plus:
 
 Commercial Tools
 ----------------
