@@ -13,6 +13,12 @@ Drupal Dev Environment Setup Notes
 Useful advice/notes from:
 
 * Alan Ivey: [OS X 10.10 Yosemite Local Development Environment: Apache, PHP, and MySQL with Homebrew](https://echo.co/blog/os-x-1010-yosemite-local-development-environment-apache-php-and-mysql-homebrew)
+*
+
+Basically, I followed this verbatim – installing on 10.11 PB4, the only problems I ran into were:
+
+* Xcode 7-beta needed to be installed and command line tools downloaded.
+* PHP 5.6 failed to compile, the solution required [modifying a makefile as described by alsantos123](https://github.com/Homebrew/homebrew-php/issues/1941).
 
 Previous versions also learned from:
 
